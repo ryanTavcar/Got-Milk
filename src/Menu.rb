@@ -19,11 +19,11 @@ class Menu
         user_input = gets.chomp.downcase
         
         if @answers[1].include?(user_input)
-            puts recipe = Recipe.new.start
+            recipe = Recipe.new.start
         elsif @answers[2].include?(user_input)
-            puts convert = Convert.new.start
+            convert = Convert.new.start
         elsif @answers[3].include?(user_input)
-            puts help = Help.new.start
+            help = Help.new.start
         else
             puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help."
         end
