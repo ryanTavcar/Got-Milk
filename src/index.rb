@@ -2,8 +2,7 @@ require_relative './Menu.rb'
 require_relative './Recipe.rb'
 require_relative './Convert.rb'
 
-#menu = Menu.new
-#menu.start
+menu = Menu.new.start
+
 #recipe = Recipe.new
 #recipe.search
-convert = Convert.new.start

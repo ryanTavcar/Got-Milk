@@ -24,6 +24,8 @@ class Menu
             convert = Convert.new.start
         elsif @answers[3].include?(user_input)
             help = Help.new.start
+        elsif user_input == "end"
+            exit 
         else
             puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help."
         end
