@@ -22,15 +22,20 @@ class Recipe
 
     def download_recipe()
         @targeted_recipe.each do |k,v|
-            File.open("recipes.txt", 'w') do |f| 
+            File.open("recipes.txt", 'a') do |f| 
                 f.puts *k 
                 f.puts "\n"
                 f.puts *v
+                f.puts "\n"
             end
         end
     end
 
     def delete_recipes
         @targeted_recipe = {}
+    end
+
+    def delete_saved_recipes
+        File.open("recipes.txt", 'w') {|f| f.puts ""}
     end
 end

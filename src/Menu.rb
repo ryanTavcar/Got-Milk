@@ -95,13 +95,25 @@ class Menu
         user_input = gets.chomp
         if user_input == "1"
             @recipe.download_recipe
-            puts "Recipe saved in recipes.txt"
+            self.downloaded_menu_options
         elsif user_input == "2"
             self.start_convert
         elsif user_input == "3"
             @recipe.delete_recipes
             self.start_main_menu
-           
+        end
+    end
+
+    def downloaded_menu_options
+        puts "Recipe saved in recipes.txt"
+        puts "- [1] Delete saved recipes\n- [2] Return to main menu"
+        user_input = gets.chomp
+        if user_input == "1"
+            @recipe.delete_saved_recipes
+        elsif user_input == "2"
+            self.start_main_menu
+        else
+            exit
         end
     end
 end
