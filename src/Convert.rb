@@ -1,52 +1,6 @@
 require_relative './Menu.rb'
 class Convert
     def initialize
-     
-    end
- 
-    def start # Start Convert class / main code block
-        puts "What do you want to convert?"
-        puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon"
-        user_input = gets.chomp
-        case user_input
-        when "lbs"
-            puts "Converting lbs to kg"
-            user_convert = gets.chomp
-            puts "#{lbs_to_kg(user_convert)} kg"
-        when "oz"
-            puts "Converting ounce to grams"
-            user_convert = gets.chomp
-            puts "#{oz_to_g(user_convert)} g"
-        when "gallon"
-            puts "Converting gallon to litre"
-            user_convert = gets.chomp
-            puts "#{gallon_to_litre(user_convert)} litre"
-        when "quart"
-            puts "Converting quartz to mililitre"
-            user_convert = gets.chomp
-            puts "#{quart_to_ml(user_convert)} ml"
-        when "kg"
-            puts "Converting kg to lbs"
-            user_convert = gets.chomp
-            puts "#{kg_to_lbs(user_convert)} pounds"
-        when "grams"
-            puts "Converting grams to ounce"
-            user_convert = gets.chomp
-            puts "#{g_to_oz(user_convert)} oz"
-        when "ml"
-            puts "Converting mililitre to quartz"
-            user_convert = gets.chomp
-            puts "#{ml_to_quartz(user_convert)} quartz"
-        when "litre"
-            puts "Converting litre to gallon"
-            user_convert = gets.chomp
-            puts "#{litre_to_gallon(user_convert)} gallon"
-        when "end"
-            menu = Menu.new.start
-        else
-            puts "not a valid input"
-        end
-        self.start
     end
 
     def lbs_to_kg(user_convert) # divide the lbs value by 2.205 to get kg

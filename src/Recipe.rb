@@ -4,35 +4,30 @@ require 'json'
 class Recipe
    def initialize()
     @targeted_recipe = {}
-    #@user_input = ""
    end
 
-   def start    # Start Recipe class / main code block / displays list of ingredients.
-        puts File.foreach("ingredient_list.txt") { |line| puts line }
-        puts "What Ingredients do you have?"
-        @user_input = gets.chomp
-        search()
-   end
-
-   def search()
-    # Returns recipes with the given @user_input value
+   def search(user_input)
+        # Returns recipes with the given @user_input value
         recipe_json = File.read('./recipes.json')
         json_recipes = JSON.parse(recipe_json)
         json_recipes.each do |recipe_names, key|
-            if key["ingredients"].include?(@user_input)
+            if key["ingredients"].include?(user_input)
                 @targeted_recipe[recipe_names] = key
-            elsif key["ingredients"] == @user_input
-                @targeted_recipe[recipe_names] = key
+            elsif key["ingredients"] == user_input
+                @targeted_recipe[recipe_names] = keys
             end
         end
-        pp @targeted_recipe
-        convert = Convert.new.start
+        @targeted_recipe
    end
 
-    def print_recipe()
-        @targeted_recipe.each do |key, value|
-            value.each { |keys, value| puts "#{keys} : #{value}" }
-        end
+    def download_recipe()
+        puts ":)"
+        #@targeted_recipe.each do |key, value|
+        #    value.each { |keys, value| puts "#{keys} : #{value}" }
+        #end
     end
 
+    def delete_recipes
+        @targeted_recipe = {}
+    end
 end
