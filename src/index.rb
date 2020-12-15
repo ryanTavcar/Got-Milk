@@ -1,8 +1,8 @@
 require_relative './Menu.rb'
 require_relative './Recipe.rb'
-require_relative './Convert.rb'
+#require_relative './Convert.rb'
 
-menu = Menu.new.start
-
+menu = Menu.new
+menu.start
 #recipe = Recipe.new
 #recipe.search

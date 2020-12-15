@@ -13,13 +13,14 @@ class Menu
         }
     end
 
-    def start
+    def start() # Start Menu class / main code block
         puts "[1] Start\n[2] Measurement Converter\n[3] How to Use"
 
         user_input = gets.chomp.downcase
         
         if @answers[1].include?(user_input)
-            recipe = Recipe.new.start
+            recipe = Recipe.new
+            recipe.start
         elsif @answers[2].include?(user_input)
             convert = Convert.new.start
         elsif @answers[3].include?(user_input)

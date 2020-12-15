@@ -1,8 +1,6 @@
 {
-    "chicken_soup": {
-        "name": "Chicken Soup",
-        "id": 2,
-        "decription": "This chicken soup is awesome!",
+    "Chicken Soup": {
+        "description": "This chicken soup is awesome!",
         "ingredients": ["chicken", "stock", "carrots"],
         "directions": [
             "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
@@ -11,10 +9,8 @@
             "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
         ]
     },
-    "mini_german_pancakes": {
-        "name": "Mini German Pancakes",
-        "id": 4,
-        "decription": "These pancakes are awesome!",
+    "Mini German Pancakes": {
+        "description": "These pancakes are awesome!",
         "ingredients": ["butter", "flour", "eggs", "milk"],
         "directions": [
             "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
@@ -23,10 +19,8 @@
             "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
         ]
     },
-    "vanilla_cake": {
-        "name": "Vanilla Cake",
-        "id": 8,
-        "decription": "This cake is awesome!",
+    "Vanilla Cake": {
+        "description": "This cake is awesome!",
         "ingredients": ["flour", "butter", "eggs", "milk", "vanilla"],
         "directions": [
             "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",

@@ -1,9 +1,10 @@
+require_relative './Menu.rb'
 class Convert
     def initialize
      
     end
  
-    def start
+    def start # Start Convert class / main code block
         puts "What do you want to convert?"
         puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon"
         user_input = gets.chomp
@@ -44,7 +45,6 @@ class Convert
             menu = Menu.new.start
         else
             puts "not a valid input"
-            self.start
         end
         self.start
     end
