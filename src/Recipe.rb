@@ -21,10 +21,13 @@ class Recipe
    end
 
     def download_recipe()
-        puts ":)"
-        #@targeted_recipe.each do |key, value|
-        #    value.each { |keys, value| puts "#{keys} : #{value}" }
-        #end
+        @targeted_recipe.each do |k,v|
+            File.open("recipes.txt", 'w') do |f| 
+                f.puts *k 
+                f.puts "\n"
+                f.puts *v
+            end
+        end
     end
 
     def delete_recipes

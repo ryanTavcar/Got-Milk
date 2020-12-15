@@ -40,8 +40,7 @@ class Menu
         puts "What Ingredients do you have?"
         user_input = gets.chomp
         pp @recipe.search(user_input)
-        @recipe.delete_recipes
-        recipe_ask_for_options()
+        self.recipe_ask_for_options()
     end
 
     def start_convert # Start Convert class / main code block
@@ -96,10 +95,13 @@ class Menu
         user_input = gets.chomp
         if user_input == "1"
             @recipe.download_recipe
+            puts "Recipe saved in recipes.txt"
         elsif user_input == "2"
             self.start_convert
         elsif user_input == "3"
+            @recipe.delete_recipes
             self.start_main_menu
+           
         end
     end
 end
