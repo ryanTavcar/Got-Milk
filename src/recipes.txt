@@ -1,3 +1,19 @@
+
+Mini German Pancakes
+
+description
+These pancakes are awesome!
+ingredients
+butter
+flour
+eggs
+milk
+directions
+- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.
+- Be careful to see that any flour clumps get well-blended.
+- Blend in butter a little at a time in order to temper the eggs.
+- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top.
+
 Vanilla Cake
 
 description
@@ -13,3 +29,4 @@ directions
 - Be careful to see that any flour clumps get well-blended.
 - Blend in butter a little at a time in order to temper the eggs.
 - Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top.
+

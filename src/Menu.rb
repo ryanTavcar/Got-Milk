@@ -14,7 +14,6 @@ class Menu
         @recipe = Recipe.new
         @convert = Convert.new
         @help = Help.new
-
     end
 
     def start_main_menu() # Start Menu class / main code block
@@ -39,8 +38,35 @@ class Menu
         puts File.foreach("ingredient_list.txt") { |line| puts line }
         puts "What Ingredients do you have?"
         user_input = gets.chomp
-        pp @recipe.search(user_input)
+        recipe_list_of_names = @recipe.search(user_input)
+        select_recipe(recipe_list_of_names)
         self.recipe_ask_for_options()
+    end
+
+    def select_recipe(recipe_list_of_names)
+        #recipe_list.each_with_index do |obj, i| 
+        #    puts "-[#{i + 1}] #{obj}"
+        #    user_input = gets.chomp
+        #    if user_input == (i+1).to_s
+        #        puts ":)"
+        #    end
+        #end
+
+        active = true
+        while active
+            #push i into hash as a key. the value of the key will be the corresponding recipe.
+            recipe_list_of_names.each_with_index do |name, i| 
+                puts "-[#{i + 1}] #{name}"
+            end
+            user_input = gets.chomp
+            if user_input == recipe_list_of_names[1]
+                puts ":)"
+                puts user_input
+                pp @recipe.targeted_recipe[user_input]
+                active = false
+            end
+        end
+        
     end
 
     def start_convert # Start Convert class / main code block

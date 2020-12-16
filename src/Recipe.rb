@@ -2,8 +2,10 @@ require_relative './Menu.rb'
 require 'json'
 
 class Recipe
+    attr_accessor :targeted_recipe
    def initialize()
     @targeted_recipe = {}
+    @recipe_list = []
    end
 
    def search(user_input)
@@ -13,11 +15,13 @@ class Recipe
         json_recipes.each do |recipe_names, key|
             if key["ingredients"].include?(user_input)
                 @targeted_recipe[recipe_names] = key
+                @recipe_list.push(recipe_names)
             elsif key["ingredients"] == user_input
                 @targeted_recipe[recipe_names] = keys
             end
         end
-        @targeted_recipe
+        @targeted_recipe = @targeted_recipe
+        @recipe_list
    end
 
     def download_recipe()
