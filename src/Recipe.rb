@@ -2,26 +2,31 @@ require_relative './Menu.rb'
 require 'json'
 
 class Recipe
-    attr_accessor :targeted_recipe
+    attr_accessor :recipe_list
    def initialize()
+    @json_recipes = {}
     @targeted_recipe = {}
     @recipe_list = []
    end
 
+   def get_json
+        recipe_json = File.read('./recipes.json')
+        @json_recipes = JSON.parse(recipe_json)
+   end
+
    def search(user_input)
         # Returns recipes with the given @user_input value
-        recipe_json = File.read('./recipes.json')
-        json_recipes = JSON.parse(recipe_json)
-        json_recipes.each do |recipe_names, key|
+        self.get_json
+        @json_recipes.each do |recipe_names, key|
             if key["ingredients"].include?(user_input)
                 @targeted_recipe[recipe_names] = key
                 @recipe_list.push(recipe_names)
-            elsif key["ingredients"] == user_input
-                @targeted_recipe[recipe_names] = keys
+            else puts "That's not an ingredient."
+                self.search
             end
         end
-        @targeted_recipe = @targeted_recipe
-        @recipe_list
+        
+        @targeted_recipe
    end
 
     def download_recipe()
@@ -43,3 +48,7 @@ class Recipe
         File.open("recipes.txt", 'w') {|f| f.puts ""}
     end
 end
+
+
+elsif key["ingredients"] == user_input
+    @targeted_recipe[recipe_names] = keys
