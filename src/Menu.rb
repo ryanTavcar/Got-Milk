@@ -1,11 +1,14 @@
 require_relative './Recipe.rb'
 require_relative './Convert.rb'
 require_relative './Help.rb'
+require_relative './module.rb'
 require 'colorize'
 
 
 # Menu class that will provide all menu-ing options throughout the application
 class Menu
+    include Index
+
     def initialize
         @answers = [{
             1 => ["1", "start"],
@@ -21,6 +24,7 @@ class Menu
         @recipe = Recipe.new
         @convert = Convert.new
         @help = Help.new
+
     end
 
     def start_main_menu() # Start Menu class / main code block
@@ -52,37 +56,24 @@ class Menu
     end
 
     def print_recipe
+        
         puts @recipe.recipe_name
         user_input = gets.chomp.to_i
-        i = 0
-        while i < @recipe.recipe_name.size
-            index = @recipe.recipe_name.find_index {|item| item == @recipe.recipe_name[i]}
-            if index == user_input
-                    system("clear")
-                    puts @recipe.recipe_name[i]
-                    puts "Description : #{@recipe.recipe_description[i]}"
-                    puts "Ingredients : #{@recipe.recipe_ingredients[i]}"
-                    puts "Directions : #{@recipe.recipe_directions[i]}"
-            else 
-                puts "That wasn't correct... try again."
-                self.print_recipe
-            end
-            i = i+1
-        end
-        #if user_input == @recipe.recipe_name[0].downcase
-        #    system("clear")
-        #    puts @recipe.recipe_name[0]
-        #    puts "Description : #{@recipe.recipe_description[0]}"
-        #    puts "Ingredients : #{@recipe.recipe_ingredients[0]}"
-        #    puts "Directions : #{@recipe.recipe_directions[0]}"
-            
-        #elsif user_input == @recipe.recipe_name[1].downcase
-        #    system("clear")
-        #    puts @recipe.recipe_name[1]
-        #    puts "Description : #{@recipe.recipe_description[1]}"
-        #    puts "Ingredients : #{@recipe.recipe_ingredients[1]}"
-        #    puts "Directions : #{@recipe.recipe_directions[1]}"
-        #else self.print_recipe
+        index_comparison(user_input, @recipe.recipe_name, @recipe.recipe_description, @recipe.recipe_ingredients, @recipe.recipe_directions)
+        #i = 0
+        #while i < @recipe.recipe_name.size
+        #    index = @recipe.recipe_name.find_index {|item| item == @recipe.recipe_name[i]}
+        #    if index == user_input
+        #            system("clear")
+        #            puts @recipe.recipe_name[i]
+        #            puts "Description : #{@recipe.recipe_description[i]}"
+        #            puts "Ingredients : #{@recipe.recipe_ingredients[i]}"
+        #            puts "Directions : #{@recipe.recipe_directions[i]}"
+        #    else 
+        #        puts "That wasn't correct... try again."
+        #        self.print_recipe
+        #    end
+        #    i = i+1
         #end
     end
 
