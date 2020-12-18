@@ -1,13 +1,12 @@
 require_relative './Recipe.rb'
 require_relative './Convert.rb'
 require_relative './Help.rb'
-require_relative './module.rb'
 require 'colorize'
 
 
 # Menu class that will provide all menu-ing options throughout the application
 class Menu
-    include Index
+
 
     def initialize
         @answers = [{
@@ -19,8 +18,8 @@ class Menu
             1 => ["1", "download", "save"],
             2 => ["2", "convert"],
             3 => ["3", "back", "main menu"]
-        }
-        ]
+        }]
+
         @recipe = Recipe.new
         @convert = Convert.new
         @help = Help.new
@@ -45,7 +44,8 @@ class Menu
         end
     end
 
-    def start_recipe   # Start Recipe class / main code block / displays list of ingredients.
+    # Start Recipe class / main code block / displays list of ingredients.
+    def start_recipe
         @recipe.delete_recipes
         puts File.foreach("ingredient_list.txt") { |line| puts line }
         puts "What Ingredients do you have?".colorize(:blue)
@@ -55,28 +55,15 @@ class Menu
         self.recipe_ask_for_options()
     end
 
+    # Print recipe
     def print_recipe
-        
         puts @recipe.recipe_name
         user_input = gets.chomp.to_i
-        index_comparison(user_input, @recipe.recipe_name, @recipe.recipe_description, @recipe.recipe_ingredients, @recipe.recipe_directions)
-        #i = 0
-        #while i < @recipe.recipe_name.size
-        #    index = @recipe.recipe_name.find_index {|item| item == @recipe.recipe_name[i]}
-        #    if index == user_input
-        #            system("clear")
-        #            puts @recipe.recipe_name[i]
-        #            puts "Description : #{@recipe.recipe_description[i]}"
-        #            puts "Ingredients : #{@recipe.recipe_ingredients[i]}"
-        #            puts "Directions : #{@recipe.recipe_directions[i]}"
-        #    else 
-        #        puts "That wasn't correct... try again."
-        #        self.print_recipe
-        #    end
-        #    i = i+1
-        #end
+        @recipe.select_recipe(user_input)
+        self.start_main_menu
     end
 
+    # CONSIDER PLACING THIS METHOD INTO module.rb
     def start_convert # Start Convert class / main code block
         puts "What do you want to convert?"
         puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon"

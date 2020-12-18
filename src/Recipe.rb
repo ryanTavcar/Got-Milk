@@ -30,45 +30,59 @@ class Recipe
                     @recipe_ingredients.push (key["ingredients"])
                     @recipe_description.push(key["description"])
                     @recipe_directions.push(key["directions"])
-                else 
-                    
+                elsif key["keyword"].sort == user_input.split(' ').sort
+                    @recipe_keywords.push(key["keyword"])
+                    @recipe_name.push(key["name"])
+                    @recipe_ingredients.push (key["ingredients"])
+                    @recipe_description.push(key["description"])
+                    @recipe_directions.push(key["directions"])
+                else  
                 end
             end
-        #if key["ingredients"].include?(user_input)
-        #    @targeted_recipe[recipe_names] = key
-        #    @recipe_ingredients.push(key["ingredients"].sort)
-        #    @recipe[recipe_names] = key
-            #@recipe_key.push(key)
-        #    @recipe_name.push(recipe_names)
-        #elsif key["ingredients"] == user_input
-        #    @targeted_recipe[recipe_names] = keys
         end
-        #p @recipe_name
-        #p @recipe_keywords
-        #p @recipe_ingredients
-        #p @recipe_description
-        #p @recipe_directions
 
         @recipe_name
+
     end
 
     def download_recipe()
-        @targeted_recipe.each do |k,v|
-            File.open("recipes.txt", 'a') do |f| 
-                f.puts *k 
-                f.puts "\n"
-                f.puts *v
-                f.puts "\n"
-            end
+        File.open("recipes.txt", 'a') do |f| 
+         f.puts @recipe_name
+         f.puts "\n"
+         f.puts @recipe_description
+         f.puts "\n"
+         f.puts @recipe_ingredients
+         f.puts "\n"
+         f.puts @recipe_directions
         end
     end
 
     def delete_recipes
-        @targeted_recipe = {}
+        @recipe_name = []
     end
 
     def delete_saved_recipes
         File.open("recipes.txt", 'w') {|f| f.puts ""}
+    end
+
+    def select_recipe(user_input)
+        i = 0
+        while i <= @recipe_name.size
+            index = @recipe_name.find_index {|item| item == @recipe_name[i]}
+            if index == user_input
+                    system("clear")
+                    puts @recipe_name[i]
+                    puts "Description : #{@recipe_description[i]}"
+                    puts "Ingredients : #{@recipe_ingredients[i]}"
+                    puts "Directions : #{@recipe_directions[i]}"
+            elsif index != user_input
+
+            else 
+                puts "That wasn't correct... try again."
+ 
+            end
+            i = i+1
+        end
     end
 
 end

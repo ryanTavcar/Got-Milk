@@ -1,34 +1,37 @@
 
+Chicken Soup
+
+This chicken soup is awesome!
+
+1 cup chicken
+1 cup stock
+1 cup carrots
+
+- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.
+- Be careful to see that any flour clumps get well-blended.
+- Blend in butter a little at a time in order to temper the eggs.
+- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top.
+Vanilla Cake
 Mini German Pancakes
 
-	description: These pancakes are awesome!
+This cake soup is awesome!
+These pancakes are awesome!
 
-	ingredients:
-			butter
-			flour
-			eggs
-			milk
-	
-	directions:
-			- Preheat oven to 400 degrees F. Blend 			  		  first five ingredients (milk thru 			  		  vanilla) in a blender.
-			- Be careful to see that any flour 			  		  clumps get well-blended.
-			- Blend in butter a little at a time in 			  	  order to temper the eggs.
-			- Grease muffin tins well and distribute 			  batter evenly between 24 tins  Bake 			   		  for 15 minutes, or until puffy 			  		  and golden on top.
+1 cup flour
+1 cup butter
+1 cup eggs
+1 cup milk
+1 cup vanilla
+1 cup butter
+1 cup flour
+1 cup eggs
+1 cup milk
 
-Vanilla Cake
-
-	description: This cake is awesome!
-
-	ingredients
-			flour
-			butter
-			eggs
-			milk
-			vanilla
-
-	directions
-			- Preheat oven to 400 degrees F. Blend 			  		  first five ingredients (milk thru 			  		  vanilla) in a blender.
-			- Be careful to see that any flour 			  		  clumps get well-blended.
-			- Blend in butter a little at a time in 			  	  order to temper the eggs.
-			- Grease muffin tins well and distribute 			  batter evenly between 24 tins  Bake 			  		  for 15 minutes, or until puffy and 			  		  golden on top.
-
+- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.
+- Be careful to see that any flour clumps get well-blended.
+- Blend in butter a little at a time in order to temper the eggs.
+- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top.
+- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.
+- Be careful to see that any flour clumps get well-blended.
+- Blend in butter a little at a time in order to temper the eggs.
+- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top.
