@@ -42,30 +42,48 @@ class Menu
     end
 
     def start_recipe   # Start Recipe class / main code block / displays list of ingredients.
+        @recipe.delete_recipes
         puts File.foreach("ingredient_list.txt") { |line| puts line }
         puts "What Ingredients do you have?".colorize(:blue)
         user_input = gets.chomp
         @recipe.search(user_input)
-        p @recipe.recipe_name
-        self.get_recipe
+        self.print_recipe
         self.recipe_ask_for_options()
     end
 
-    def get_recipe
-        user_input = gets.chomp.downcase
-
-        if user_input == @recipe.recipe_name[0].downcase
-            puts @recipe.recipe_name[0]
-            puts "Description : #{@recipe.recipe_description[0]}"
-            puts "Ingredients : #{@recipe.recipe_ingredients[0]}"
-            puts "Directions : #{@recipe.recipe_directions[0]}"
-        elsif user_input == @recipe.recipe_name[1]
-            puts @recipe.recipe_name[1]
-            puts @recipe.recipe_description[1]
-            puts @recipe.recipe_ingredients[1]
-            puts @recipe.recipe_directions[1]
-        else puts ":("
+    def print_recipe
+        puts @recipe.recipe_name
+        user_input = gets.chomp.to_i
+        i = 0
+        while i < @recipe.recipe_name.size
+            index = @recipe.recipe_name.find_index {|item| item == @recipe.recipe_name[i]}
+            if index == user_input
+                    system("clear")
+                    puts @recipe.recipe_name[i]
+                    puts "Description : #{@recipe.recipe_description[i]}"
+                    puts "Ingredients : #{@recipe.recipe_ingredients[i]}"
+                    puts "Directions : #{@recipe.recipe_directions[i]}"
+            else 
+                puts "That wasn't correct... try again."
+                self.print_recipe
+            end
+            i = i+1
         end
+        #if user_input == @recipe.recipe_name[0].downcase
+        #    system("clear")
+        #    puts @recipe.recipe_name[0]
+        #    puts "Description : #{@recipe.recipe_description[0]}"
+        #    puts "Ingredients : #{@recipe.recipe_ingredients[0]}"
+        #    puts "Directions : #{@recipe.recipe_directions[0]}"
+            
+        #elsif user_input == @recipe.recipe_name[1].downcase
+        #    system("clear")
+        #    puts @recipe.recipe_name[1]
+        #    puts "Description : #{@recipe.recipe_description[1]}"
+        #    puts "Ingredients : #{@recipe.recipe_ingredients[1]}"
+        #    puts "Directions : #{@recipe.recipe_directions[1]}"
+        #else self.print_recipe
+        #end
     end
 
     def start_convert # Start Convert class / main code block
@@ -120,6 +138,7 @@ class Menu
         user_input = gets.chomp
         if @answers[1][1].include?(user_input)
             @recipe.download_recipe
+            self.downloaded_menu_options
         elsif @answers[1][2].include?(user_input)
             self.start_convert
         elsif @answers[1][3].include?(user_input)
