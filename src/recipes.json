@@ -1,32 +1,40 @@
 {
-    "Chicken Soup": {
-        "description": "This chicken soup is awesome!",
-        "ingredients": ["chicken", "stock", "carrots"],
-        "directions": [
-            "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
-            "- Be careful to see that any flour clumps get well-blended.",
-            "- Blend in butter a little at a time in order to temper the eggs.",
-            "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
-        ]
+
+    "recipes": [{
+        "name"              : "Chicken Soup",
+        "description"       : "This chicken soup is awesome!",
+        "keyword"           : ["chicken", "stock", "carrots"],
+        "ingredients"       : ["1 cup chicken", "1 cup stock", "1 cup carrots"],
+        "directions"        : [
+                                "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
+                                "- Be careful to see that any flour clumps get well-blended.",
+                                "- Blend in butter a little at a time in order to temper the eggs.",
+                                "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
+                            ]
     },
-    "Mini German Pancakes": {
-        "description": "These pancakes are awesome!",
-        "ingredients": ["butter", "flour", "eggs", "milk"],
-        "directions": [
-            "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
-            "- Be careful to see that any flour clumps get well-blended.",
-            "- Blend in butter a little at a time in order to temper the eggs.",
-            "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
-        ]
+    {
+        "name"              : "Vanilla Cake",
+        "description"       : "This cake soup is awesome!",
+        "keyword"           : ["flour", "butter", "eggs", "milk", "vanilla"],
+        "ingredients"       : ["1 cup flour", "1 cup butter", "1 cup eggs", "1 cup milk", "1 cup vanilla"],
+        "directions"        : [
+                                "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
+                                "- Be careful to see that any flour clumps get well-blended.",
+                                "- Blend in butter a little at a time in order to temper the eggs.",
+                                "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
+                            ]
     },
-    "Vanilla Cake": {
-        "description": "This cake is awesome!",
-        "ingredients": ["flour", "butter", "eggs", "milk", "vanilla"],
-        "directions": [
-            "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
-            "- Be careful to see that any flour clumps get well-blended.",
-            "- Blend in butter a little at a time in order to temper the eggs.",
-            "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
-        ]
-    }
+    {
+        "name"              : "Mini German Pancakes",
+        "description"       : "These pancakes are awesome!",
+        "keyword"           : ["butter", "flour", "eggs", "milk"],
+        "ingredients"       : ["1 cup butter", "1 cup flour", "1 cup eggs", "1 cup milk"],
+        "directions"        : [
+                            "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
+                            "- Be careful to see that any flour clumps get well-blended.",
+                            "- Blend in butter a little at a time in order to temper the eggs.",
+                            "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
+                        ]
+    }]
+    
 }

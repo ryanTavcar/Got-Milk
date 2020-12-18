@@ -1,4 +1,5 @@
 require_relative './Menu.rb'
+
 class Convert
     def initialize
     end

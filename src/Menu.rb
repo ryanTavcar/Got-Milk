@@ -1,72 +1,71 @@
 require_relative './Recipe.rb'
 require_relative './Convert.rb'
 require_relative './Help.rb'
+require 'colorize'
 
 
 # Menu class that will provide all menu-ing options throughout the application
 class Menu
     def initialize
-        @answers = {
+        @answers = [{
             1 => ["1", "start"],
             2 => ["2", "convert"],
             3 => ["3", "help"]
+        },
+        {
+            1 => ["1", "download", "save"],
+            2 => ["2", "convert"],
+            3 => ["3", "back", "main menu"]
         }
+        ]
         @recipe = Recipe.new
         @convert = Convert.new
         @help = Help.new
     end
 
     def start_main_menu() # Start Menu class / main code block
-        puts "[1] Start\n[2] Measurement Converter\n[3] How to Use"
+        puts "[1] Start\n[2] Measurement Converter\n[3] How to Use".colorize(:blue)
 
         user_input = gets.chomp.downcase
         
-        if @answers[1].include?(user_input)
+        if @answers[0][1].include?(user_input)
             self.start_recipe
-        elsif @answers[2].include?(user_input)
+        elsif @answers[0][2].include?(user_input)
             self.start_convert
-        elsif @answers[3].include?(user_input)
+        elsif @answers[0][3].include?(user_input)
             self.help_start
         elsif user_input == "end"
             exit 
         else
-            puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help."
+            puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help.".colorize(:red)
         end
     end
 
     def start_recipe   # Start Recipe class / main code block / displays list of ingredients.
         puts File.foreach("ingredient_list.txt") { |line| puts line }
-        puts "What Ingredients do you have?"
+        puts "What Ingredients do you have?".colorize(:blue)
         user_input = gets.chomp
-        recipe_list_of_names = @recipe.search(user_input)
-        select_recipe(recipe_list_of_names)
+        @recipe.search(user_input)
+        p @recipe.recipe_name
+        self.get_recipe
         self.recipe_ask_for_options()
     end
 
-    def select_recipe(recipe_list_of_names)
-        #recipe_list.each_with_index do |obj, i| 
-        #    puts "-[#{i + 1}] #{obj}"
-        #    user_input = gets.chomp
-        #    if user_input == (i+1).to_s
-        #        puts ":)"
-        #    end
-        #end
+    def get_recipe
+        user_input = gets.chomp.downcase
 
-        active = true
-        while active
-            #push i into hash as a key. the value of the key will be the corresponding recipe.
-            recipe_list_of_names.each_with_index do |name, i| 
-                puts "-[#{i + 1}] #{name}"
-            end
-            user_input = gets.chomp
-            if user_input == recipe_list_of_names[1]
-                puts ":)"
-                puts user_input
-                pp @recipe.targeted_recipe[user_input]
-                active = false
-            end
+        if user_input == @recipe.recipe_name[0].downcase
+            puts @recipe.recipe_name[0]
+            puts "Description : #{@recipe.recipe_description[0]}"
+            puts "Ingredients : #{@recipe.recipe_ingredients[0]}"
+            puts "Directions : #{@recipe.recipe_directions[0]}"
+        elsif user_input == @recipe.recipe_name[1]
+            puts @recipe.recipe_name[1]
+            puts @recipe.recipe_description[1]
+            puts @recipe.recipe_ingredients[1]
+            puts @recipe.recipe_directions[1]
+        else puts ":("
         end
-        
     end
 
     def start_convert # Start Convert class / main code block
@@ -119,14 +118,16 @@ class Menu
         puts "What would you like to do?"
         puts "- [1] Download recipe\n- [2] See Conversion tool\n- [3] Back to main menu "
         user_input = gets.chomp
-        if user_input == "1"
+        if @answers[1][1].include?(user_input)
             @recipe.download_recipe
-            self.downloaded_menu_options
-        elsif user_input == "2"
+        elsif @answers[1][2].include?(user_input)
             self.start_convert
-        elsif user_input == "3"
-            @recipe.delete_recipes
+        elsif @answers[1][3].include?(user_input)
             self.start_main_menu
+        elsif user_input == "end"
+            exit 
+        else
+            puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help.".colorize(:red)
         end
     end
 

@@ -5,4 +5,6 @@ require_relative './Recipe.rb'
 menu = Menu.new
 menu.start_main_menu
 #recipe = Recipe.new
-#recipe.search
+#recipe.get_json
+
+
