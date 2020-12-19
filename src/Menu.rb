@@ -2,11 +2,12 @@ require_relative './Recipe.rb'
 require_relative './Convert.rb'
 require_relative './Help.rb'
 require 'colorize'
+require 'colorized_string'
 
 
 # Menu class that will provide all menu-ing options throughout the application
 class Menu
-
+    include Help
 
     def initialize
         @answers = [{
@@ -22,12 +23,11 @@ class Menu
 
         @recipe = Recipe.new
         @convert = Convert.new
-        @help = Help.new
 
     end
 
     def start_main_menu() # Start Menu class / main code block
-        puts "[1] Start\n[2] Measurement Converter\n[3] How to Use".colorize(:blue)
+        puts "[1] Start\n[2] Measurement Converter\n[3] How to Use".colorize(:yellow)
 
         user_input = gets.chomp.downcase
         
@@ -36,11 +36,12 @@ class Menu
         elsif @answers[0][2].include?(user_input)
             self.start_convert
         elsif @answers[0][3].include?(user_input)
-            self.help_start
+            start_help() #module method
         elsif user_input == "end"
             exit 
         else
-            puts "Thats wasn't a valid input, type 1 to start program, type 2 to navigate to the conversion feature and type 3 to see help.".colorize(:red)
+            puts puts "Do you not know how to press 1, 2 or 3 :| ... Try again.".colorize(:red)
+            self.start_main_menu
         end
     end
 
@@ -48,7 +49,7 @@ class Menu
     def start_recipe
         @recipe.delete_recipes
         puts File.foreach("ingredient_list.txt") { |line| puts line }
-        puts "What Ingredients do you have?".colorize(:blue)
+        puts "What Ingredients do you have?".colorize(:yellow)
         user_input = gets.chomp
         @recipe.search(user_input)
         self.print_recipe
@@ -63,10 +64,10 @@ class Menu
         self.start_main_menu
     end
 
-    # CONSIDER PLACING THIS METHOD INTO module.rb
+
     def start_convert # Start Convert class / main code block
         puts "What do you want to convert?"
-        puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon"
+        puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon".colorize(:yellow)
         user_input = gets.chomp
         case user_input
         when "lbs"
@@ -112,7 +113,7 @@ class Menu
     def recipe_ask_for_options
         puts ""
         puts "What would you like to do?"
-        puts "- [1] Download recipe\n- [2] See Conversion tool\n- [3] Back to main menu "
+        puts "- [1] Download recipe\n- [2] See Conversion tool\n- [3] Back to main menu".colorize(:yellow)
         user_input = gets.chomp
         if @answers[1][1].include?(user_input)
             @recipe.download_recipe
@@ -130,7 +131,7 @@ class Menu
 
     def downloaded_menu_options
         puts "Recipe saved in recipes.txt"
-        puts "- [1] Delete saved recipes\n- [2] Return to main menu"
+        puts "- [1] Delete saved recipes\n- [2] Return to main menu".colorize(:yellow)
         user_input = gets.chomp
         if user_input == "1"
             @recipe.delete_saved_recipes
