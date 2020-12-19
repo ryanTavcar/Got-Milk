@@ -1,4 +1,8 @@
 # GOT MILK?
+
+### Github
+[https://github.com/ryanTavcar/Got-Milk](https://github.com/ryanTavcar/Got-Milk)
+
 ### Describe
 Got Milk? is a terminal application that searches through ingredients provided by the user input and returns a list of recipes that can be created with the corresponding ingredients.
 
@@ -17,6 +21,7 @@ The user will navigate the program via the menu options.
 + [UI / UX](#UI-/-UX)
 + [Control Flow Diagrams](#control-flow-diagrams)
 + [Implementation Plan](#implementation-plan)
++ [Testing](#testing)
 + [Help](#help)
 
 ## Functionality / Features
@@ -113,5 +118,7 @@ And also, Got milk? Features a measurement conversion tool that will convert com
 ![Trello board version 1](ppt\img\trello_board_3.1.jpg)
 ![Trello board version 1](ppt\img\trello_board_3.2.jpg)
 ![Trello board version 1](ppt\img\trello_board_3.3.jpg)
+
+## Testing
 
 ## Help
