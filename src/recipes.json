@@ -15,8 +15,8 @@
     {
         "name"              : "Vanilla Cake",
         "description"       : "This cake soup is awesome!",
-        "keyword"           : ["flour", "butter", "eggs", "milk", "vanilla"],
-        "ingredients"       : ["1 cup flour", "1 cup butter", "1 cup eggs", "1 cup milk", "1 cup vanilla"],
+        "keyword"           : ["flour", "butter", "eggs", "milk", "vanilla", "sugar"],
+        "ingredients"       : ["1 cup flour", "1 cup butter", "1 cup eggs", "1 cup milk", "1 cup vanilla", "1 cup sugar"],
         "directions"        : [
                                 "- Preheat oven to 400 degrees F. Blend first five ingredients (milk thru vanilla) in a blender.",
                                 "- Be careful to see that any flour clumps get well-blended.",
@@ -35,6 +35,56 @@
                             "- Blend in butter a little at a time in order to temper the eggs.",
                             "- Grease muffin tins well and distribute batter evenly between 24 tins  Bake for 15 minutes, or until puffy and golden on top."
                         ]
+    },
+    {
+        "name"              : "pavlova",
+        "description"       : "Wow your family and friends with this simple yet impressive pavlova",
+        "keyword"           : ["sugar","eggs","milk"],
+        "ingredients"       : ["1 1/2 cups (330g) caster sugar","6 Egg whites", "300ml milk"],
+        "directions"        : [
+                            "- Preheat oven to 120C. Line a baking tray with baking paper. Reserve 2 tsp of the sugar.",
+                            "- Use an electric mixer to whisk the egg whites in a clean, dry bowl until stiff peaks form. Gradually add the remaining sugar, 1 tablespoon at a time, whisking well after each addition. Continue whisking for 5 mins or until the sugar completely dissolves.",
+                            "- Shape into a 20cm-diameter dome. Bake for 1 hour or until meringue is dry to the touch. Turn off oven. Cool in oven, with door ajar, for 1 hour or until completely cool.",
+                            "- Carefully transfer the pavlova to a serving plate. Top with the cream"
+                        ]
+    },
+    {
+        "name"              : "chicken piccata",
+        "description"       : "Create a gourmet-style meal with this effortless chicken dish served with zesty butter and caper sauce.",
+        "keyword"           : ["chicken", "butter", "lemons"],
+        "ingredients"       : ["3 Chicken Breast Fillets (about 250g each), halved horizontally", "100g butter, chopped", "3 lemons, zested, juiced"],
+        "directions"        : [
+                            "- Place a chicken fillet between 2 sheets of plastic wrap. Use a meat mallet or rolling pin to gently pound until 1.5cm thick. Repeat with the remaining chicken. Season well.",
+                            "- Heat 10g butter in a large non-stick frying pan over high heat. Cook the chicken, in 2 batches, for 2 mins each side or until golden brown and just cooked through. Transfer to a plate and cover with foil. Reduce heat to medium.",
+                            "- Add remaining butter to the pan. Cook, stirring, for 2-3 mins or until butter melts and is golden brown.",
+                            "- Add capers and cook for 1 min or until crisp. Add lemon juice and half the lemon zest. Swirl to combine. Return chicken and any juices to the pan. Cook, turning occasionally, for 2 mins or until chicken is cooked through and sauce thickens slightly. Sprinkle with parsley. Gently shake the pan. Remove from heat.",
+                            "- Serve the chicken sprinkled with remaining lemon zest."
+                        ]
+    },
+    {
+        "name"              : "Vanilla Cookies",
+        "description"       : "5 Ingredient Butter Vanilla Cookies  are super easy to make. Butter, sugar, egg, flour, vanilla and 20 minutes. That's all you need!",
+        "keyword"           : ["butter", "sugar", "eggs", "vanilla", "flour"],
+        "ingredients"       : ["1 cup Butter", "1 cup Sugar", "1 Egg", "1 tbsp Vanilla Extract", "2 cups Flour all purpose"],
+        "directions"        : [
+                            "- Preheat the oven to 350F;",
+                            "- Using handheld mixer cream together butter and sugar for about 2-3 minutes;",
+                            "- Add egg and vanilla and mix well together;",
+                            "- Add flour, mix with all the ingredients;",
+                            "- Using teaspoon drop rounds of dough onto the parchment-lined cookie sheet approximately 1 inch apart; ",
+                            "- If using, sprinkle colored sugar on top;",
+                            "- Bake for 10 minutes; let cool off and enjoy."
+                        ]
+    },
+    {
+        "name"              : "Quick and Easy Chicken",
+        "description"       : "A tangy, quick, and easy chicken dish - prepared on the stove top in under 1/2 an hour! Quick and delicious! Serve over rice.",
+        "keyword"           : ["onion", "chicken", "sugar", "lemon"],
+        "ingredients"       : ["1 onion, chopped", "4 skinless, boneless chicken breast halves", "3 tablespoons white sugar", "2 tablespoons lemon juice"],
+        "directions"        : [
+                            "- Saute onion in oil until translucent.",
+                            "- Add chicken, and brown lightly.",
+                            "- Combine ketchup, soy sauce, sugar, lemon juice, and pepper; mix well. Pour over chicken, and bring to a boil. Cover, reduce heat, and simmer for 25 to 35 minutes."
+                        ]
     }]
-    
 }

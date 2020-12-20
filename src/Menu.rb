@@ -2,7 +2,7 @@ require_relative './Recipe.rb'
 require_relative './Convert.rb'
 require_relative './Help.rb'
 require 'colorize'
-require 'colorized_string'
+
 
 
 # Menu class that will provide all menu-ing options throughout the application
@@ -23,20 +23,19 @@ class Menu
 
         @recipe = Recipe.new
         @convert = Convert.new
-
     end
 
-    def start_main_menu() # Start Menu class / main code block
+    # Start Menu class / main code block
+    def start_main_menu 
         puts "[1] Start\n[2] Measurement Converter\n[3] How to Use".colorize(:yellow)
-
         user_input = gets.chomp.downcase
-        
         if @answers[0][1].include?(user_input)
             self.start_recipe
         elsif @answers[0][2].include?(user_input)
             self.start_convert
         elsif @answers[0][3].include?(user_input)
             start_help() #module method
+            self.start_main_menu
         elsif user_input == "end"
             exit 
         else
@@ -56,16 +55,20 @@ class Menu
         self.recipe_ask_for_options()
     end
 
-    # Print recipe
+    # Print recipes to terminal, to then select which recipe.
     def print_recipe
-        puts @recipe.recipe_name
+        index = 0
+        @recipe.recipe_name.each do|item|
+            puts "- [#{index}] #{item}".colorize(:yellow)
+            index = index + 1
+        end
         user_input = gets.chomp.to_i
         @recipe.select_recipe(user_input)
-        self.start_main_menu
+        #self.start_main_menu
     end
 
-
-    def start_convert # Start Convert class / main code block
+    # Start Convert class / main code block
+    def start_convert 
         puts "What do you want to convert?"
         puts "- [lbs] to kg\n- [oz] to grams\n- [gallon] to litre\n- [quart] to ml\n- [kg] to lbs\n- [grams] to ounce\n- [ml] to quartz\n- [litre] to gallon".colorize(:yellow)
         user_input = gets.chomp
@@ -110,14 +113,15 @@ class Menu
         self.start_convert
     end
 
+    # selected recipe menu options.
     def recipe_ask_for_options
         puts ""
-        puts "What would you like to do?"
-        puts "- [1] Download recipe\n- [2] See Conversion tool\n- [3] Back to main menu".colorize(:yellow)
+        puts "What would you like to do?".colorize(:yellow)
+        puts "\n- [1] Save recipe\n- [2] See Conversion tool\n- [3] Back to main menu".colorize(:yellow)
         user_input = gets.chomp
         if @answers[1][1].include?(user_input)
-            @recipe.download_recipe
-            self.downloaded_menu_options
+            @recipe.save_recipe
+            self.save_menu_options
         elsif @answers[1][2].include?(user_input)
             self.start_convert
         elsif @answers[1][3].include?(user_input)
@@ -129,7 +133,8 @@ class Menu
         end
     end
 
-    def downloaded_menu_options
+    # menu options for saved recipe files.
+    def save_menu_options
         puts "Recipe saved in recipes.txt"
         puts "- [1] Delete saved recipes\n- [2] Return to main menu".colorize(:yellow)
         user_input = gets.chomp
@@ -140,5 +145,6 @@ class Menu
         else
             exit
         end
+        self.start_main_menu
     end
 end

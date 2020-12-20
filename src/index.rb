@@ -4,11 +4,14 @@ require_relative './Convert.rb'
 
 convert = Convert.new
 menu = Menu.new
+STDOUT.sync = true
 
+# If there is no command line arguments, run this block.
 if ARGV.empty? == true
-    menu.start_main_menu
+    puts menu.start_main_menu
 end
 
+# If there are command line arguments, run this block.
 case ARGV.empty? == false
 
 when ARGV[0] == "lbs to kg"

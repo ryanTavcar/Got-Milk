@@ -1,17 +1,9 @@
 List of potential Ingredients:
 
-- All-purpose-Flour                 - Garlic
-- Apples                            - Lamb
-- Bacon                             - Lemons
-- Baking-powder                     - Lettuce
-- Bananas                           - Milk
-- Beef                              - Rice
-- Brocolli                          - Rosemary
-- Brown-sugar                       - Salt
-- Butter                            - Self-raising-Flour
-- Carrots                           - Soy sauce
-- Chicken                           - Thyme
-- Stock                             - Vanilla-extract
-- Chili-powder                      - Vinegar
-- Eggs                              - White-wine
-- Fish                              
+- Flour         - Lemons
+- Lamb          - Milk                         
+- Sugar         - Vanilla           
+- Butter        - Carrots
+- Chicken       - Stock
+- Vinegar       - Eggs
+                             
